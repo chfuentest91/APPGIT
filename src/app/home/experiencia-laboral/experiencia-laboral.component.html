@@ -1,0 +1,40 @@
+<ion-card>
+  <ion-card-header>
+    <ion-card-title>Experiencia Laboral</ion-card-title>
+  </ion-card-header>
+
+  <ion-card-content>
+
+    <ion-item>
+      <ion-label position="stacked">Cargo</ion-label>
+      <ion-input [(ngModel)]="cargo"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Empresa</ion-label>
+      <ion-input [(ngModel)]="empresa"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Años</ion-label>
+      <ion-input type="number" [(ngModel)]="anios"></ion-input>
+    </ion-item>
+
+    <ion-button expand="block" (click)="agregar()">
+      Agregar experiencia
+    </ion-button>
+
+    <ion-list>
+      <ion-item *ngFor="let exp of lista">
+        <ion-label>
+          <h2>{{ exp.cargo }} - {{ exp.empresa }}</h2>
+          <p>{{ exp.anios }} año(s)</p>
+        </ion-label>
+        <ion-button fill="clear" color="danger" (click)="eliminar(exp.id)">
+          Eliminar
+        </ion-button>
+      </ion-item>
+    </ion-list>
+
+  </ion-card-content>
+</ion-card>

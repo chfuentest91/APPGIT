@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>API Local (json-server)</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Formulario Usuario</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-item>
+        <ion-label position="stacked">Nombre</ion-label>
+        <ion-input [(ngModel)]="form.nombre"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Apellido</ion-label>
+        <ion-input [(ngModel)]="form.apellido"></ion-input>
+      </ion-item>
+
+      <div class="botones">
+        <ion-button expand="block" (click)="guardar()">
+          {{ form.id ? 'Actualizar' : 'Crear' }}
+        </ion-button>
+        <ion-button expand="block" fill="outline" (click)="limpiar()">
+          Limpiar
+        </ion-button>
+      </div>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-list>
+    <ion-list-header>Usuarios (GET)</ion-list-header>
+
+    <ion-item *ngFor="let u of usuarios" (click)="seleccionar(u)">
+      <ion-label>
+        <h2>{{ u.nombre }}</h2>
+        <p>{{ u.apellido }}</p>
+      </ion-label>
+      <ion-button
+        fill="clear"
+        color="danger"
+        slot="end"
+        (click)="eliminar(u); $event.stopPropagation()">
+        Eliminar
+      </ion-button>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

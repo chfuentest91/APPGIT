@@ -1,0 +1,67 @@
+.login-content {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+
+.app-title {
+  text-align: center;
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-top: 24px;
+  margin-bottom: 0;
+}
+
+.app-subtitle {
+  text-align: center;
+  font-size: 0.95rem;
+  margin-top: 2px;
+  margin-bottom: 24px;
+}
+
+
+.welcome-text {
+  text-align: center;
+  font-size: 1.6rem;
+  margin-bottom: 24px;
+}
+
+
+.form-login {
+  width: 100%;
+}
+
+
+.input-line {
+  --background: transparent;
+  --inner-padding-end: 0;
+  --padding-start: 0;
+
+  ion-label {
+    font-size: 0.9rem;
+  }
+
+  ion-input {
+    margin-top: 4px;
+  }
+
+
+  &::part(native) {
+    border-bottom: 1px solid #000;
+  }
+}
+
+
+.btn-ingresar {
+  margin-top: 24px;
+}
+
+
+.crear-cuenta {
+  text-align: center;
+  margin-top: 16px;
+  font-size: 0.9rem;
+  text-decoration: underline;
+  color: #1e88e5;
+}

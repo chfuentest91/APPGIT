@@ -1,0 +1,40 @@
+<ion-card>
+  <ion-card-header>
+    <ion-card-title>Certificaciones</ion-card-title>
+  </ion-card-header>
+
+  <ion-card-content>
+
+    <ion-item>
+      <ion-label position="stacked">Nombre certificación</ion-label>
+      <ion-input [(ngModel)]="nombre"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Institución</ion-label>
+      <ion-input [(ngModel)]="institucion"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Año</ion-label>
+      <ion-input type="number" [(ngModel)]="anio"></ion-input>
+    </ion-item>
+
+    <ion-button expand="block" (click)="agregar()">
+      Agregar certificación
+    </ion-button>
+
+    <ion-list>
+      <ion-item *ngFor="let cert of lista">
+        <ion-label>
+          <h2>{{ cert.nombre }}</h2>
+          <p>{{ cert.institucion }} - {{ cert.anio }}</p>
+        </ion-label>
+        <ion-button fill="clear" color="danger" (click)="eliminar(cert.id)">
+          Eliminar
+        </ion-button>
+      </ion-item>
+    </ion-list>
+
+  </ion-card-content>
+</ion-card>

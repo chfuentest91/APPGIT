@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>API Externa (JSONPlaceholder)</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Post</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-item>
+        <ion-label position="stacked">Título</ion-label>
+        <ion-input [(ngModel)]="form.title"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Contenido</ion-label>
+        <ion-textarea autoGrow="true" [(ngModel)]="form.body"></ion-textarea>
+      </ion-item>
+
+      <div class="botones">
+        <ion-button expand="block" (click)="guardar()">
+          {{ form.id ? 'Actualizar' : 'Crear' }}
+        </ion-button>
+        <ion-button expand="block" fill="outline" (click)="limpiar()">
+          Limpiar
+        </ion-button>
+      </div>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-list>
+    <ion-list-header>Posts (GET)</ion-list-header>
+
+    <ion-item *ngFor="let p of posts" (click)="seleccionar(p)">
+      <ion-label>
+        <h2>{{ p.title }}</h2>
+        <p>{{ p.body }}</p>
+      </ion-label>
+      <ion-button fill="clear" color="danger" slot="end" (click)="eliminar(p); $event.stopPropagation()">
+        Eliminar
+      </ion-button>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

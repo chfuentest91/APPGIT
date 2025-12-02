@@ -1,0 +1,39 @@
+<ion-card>
+  <ion-card-header>
+    <ion-card-title>Información Adicional</ion-card-title>
+  </ion-card-header>
+
+  <ion-card-content>
+
+    <ion-item>
+      <ion-label position="stacked">Nombre</ion-label>
+      <ion-input [(ngModel)]="data.nombre"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Apellido</ion-label>
+      <ion-input [(ngModel)]="data.apellido"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Nivel Educación</ion-label>
+      <ion-select [(ngModel)]="data.nivelEducacion" placeholder="Seleccione nivel">
+        <ion-select-option value="Basica">Básica</ion-select-option>
+        <ion-select-option value="Media">Media</ion-select-option>
+        <ion-select-option value="Tecnica">Técnica</ion-select-option>
+        <ion-select-option value="Universitaria">Universitaria</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Fecha nacimiento</ion-label>
+      <ion-input type="date" [(ngModel)]="data.fechaNacimiento"></ion-input>
+    </ion-item>
+
+    <div class="botones">
+      <ion-button (click)="limpiar()" fill="outline" expand="block">Limpiar</ion-button>
+      <ion-button (click)="mostrar()" expand="block">Mostrar</ion-button>
+    </div>
+
+  </ion-card-content>
+</ion-card>
